@@ -23,9 +23,17 @@ public class TicTacToe extends javax.swing.JFrame {
     private int oCount = 0;
     boolean checker;
     
+    
+    
     public TicTacToe() {
         initComponents();
+        setVisible(false);
     }
+    
+//    public void playerName(){
+//        jlNameX.setText(Player.jtNameX.getText());
+//        jlNameO.setText(Player.jtNameO.getText());
+//    }
     
     private void gameScore(){
         jbPlayerX.setText(String.valueOf(xCount));
@@ -224,14 +232,14 @@ public class TicTacToe extends javax.swing.JFrame {
         jPanel5 = new javax.swing.JPanel();
         jbPlayerX = new javax.swing.JLabel();
         jbPlayerO = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
+        jlNameO = new javax.swing.JLabel();
+        jlNameX = new javax.swing.JLabel();
         jPanel6 = new javax.swing.JPanel();
         jbNewGame = new javax.swing.JButton();
         jbReset = new javax.swing.JButton();
         jbExit = new javax.swing.JButton();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
@@ -400,24 +408,24 @@ public class TicTacToe extends javax.swing.JFrame {
         jbPlayerX.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jbPlayerX.setText("0");
         jbPlayerX.setOpaque(true);
-        jPanel5.add(jbPlayerX, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 40, 140, 50));
+        jPanel5.add(jbPlayerX, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 40, 90, 50));
 
         jbPlayerO.setFont(new java.awt.Font("Tahoma", 1, 30)); // NOI18N
         jbPlayerO.setForeground(new java.awt.Color(255, 153, 0));
         jbPlayerO.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jbPlayerO.setText("0");
         jbPlayerO.setOpaque(true);
-        jPanel5.add(jbPlayerO, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 110, 140, 50));
+        jPanel5.add(jbPlayerO, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 110, 90, 50));
 
-        jLabel4.setFont(new java.awt.Font("Tahoma", 1, 30)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(255, 153, 0));
-        jLabel4.setText("Player O:");
-        jPanel5.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 120, -1, -1));
+        jlNameO.setFont(new java.awt.Font("Tahoma", 1, 30)); // NOI18N
+        jlNameO.setForeground(new java.awt.Color(255, 153, 0));
+        jlNameO.setText("Player O");
+        jPanel5.add(jlNameO, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 120, -1, -1));
 
-        jLabel3.setFont(new java.awt.Font("Tahoma", 1, 30)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(102, 0, 102));
-        jLabel3.setText("Player X:");
-        jPanel5.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 50, -1, -1));
+        jlNameX.setFont(new java.awt.Font("Tahoma", 1, 30)); // NOI18N
+        jlNameX.setForeground(new java.awt.Color(102, 0, 102));
+        jlNameX.setText("PlayerX");
+        jPanel5.add(jlNameX, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 50, -1, -1));
 
         jPanel4.add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 340, 200));
 
@@ -710,15 +718,15 @@ public class TicTacToe extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new TicTacToe().setVisible(true);
+                new TicTacToe().setVisible(false);
+                Player p = new Player();
+                p.setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
@@ -739,5 +747,7 @@ public class TicTacToe extends javax.swing.JFrame {
     private javax.swing.JButton jbTic7;
     private javax.swing.JButton jbTic8;
     private javax.swing.JButton jbTic9;
+    public static javax.swing.JLabel jlNameO;
+    public static javax.swing.JLabel jlNameX;
     // End of variables declaration//GEN-END:variables
 }
